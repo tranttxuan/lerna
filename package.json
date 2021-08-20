@@ -1,0 +1,44 @@
+{
+    "name": "tailwind",
+    "version": "0.0.1",
+    "repository": "https://github.com/tranttxuan/lerna.git",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "build": "lerna run build --stream",
+      "clean": "lerna clean",
+      "test": "lerna run test",
+      "lint": "eslint ./packages --ext .ts,.js",
+      "release": "lerna publish --canary --yes"
+    },
+    "workspaces": [
+      "packages/*"
+    ],
+    "devDependencies": {
+      "@types/jest": "^26.0.23",
+      "@types/node": "^15.12.5",
+      "@typescript-eslint/eslint-plugin": "^4.28.0",
+      "@typescript-eslint/parser": "^4.28.0",
+      "eslint": "^7.29.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^3.4.0",
+      "jest": "^27.0.5",
+      "lerna": "^4.0.0",
+      "lint-staged": ">=10",
+      "prettier": "^2.3.1",
+      "simple-git-hooks": "^2.5.1",
+      "ts-jest": "^27.0.3",
+      "typescript": "^4.3.4"
+    },
+    "simple-git-hooks": {
+      "pre-commit": "npx lint-staged",
+      "pre-push": "yarn test"
+    },
+    "lint-staged": {
+      "*.{ts,js}": "eslint ./packages --ext .ts,.js --fix"
+    },
+    "dependencies": {
+      "@tds/tokens": "^0.0.1-alpha.197"
+    }
+  }
+  

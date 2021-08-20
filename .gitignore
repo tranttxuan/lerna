@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+coverage
+
+.env
+tsconfig.tsbuildinfo
+yarn-error.log
+
+.DS_Store
